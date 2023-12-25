@@ -37,6 +37,8 @@ import numpy as np
 
 
 
+
+
 def index(request):
     return render(request, 'pages/index.html')
 
@@ -290,6 +292,73 @@ class TextPreprocessor(BaseEstimator, TransformerMixin):
         substitute = re.sub(r'[^a-zA-Z]', ' ', text)
         return substitute
     
+
+## investor partie mehdi
+
+
+
+def result_investor_prediction(request):
+
+    scaling = joblib.load('scaling_investorsModel.sav')
+    model = joblib.load('knn_investorsModel_new.sav')
+    # imputer = SimpleImputer(strategy='mean')
+    
+    input_investor=[]
+    
+    input_investor.append(request.GET.get('shortest_period'))
+    input_investor.append(request.GET.get('longuest_period'))
+    input_investor.append(request.GET.get('average_weightning'))
+    input_investor.append(request.GET.get('average_value'))
+    input_investor.append(request.GET.get('average_shares'))
+    if input_investor[0] == None:
+        msg = 'enter all informations'
+        context = {'prediction':msg}
+    else:
+        x=np.array(input_investor).reshape(1,-1)
+
+        input_scaled = scaling.transform(x)
+        # imputer.fit(input_scaled)
+        print(input_scaled)
+
+        # features_imputed = imputer.transform(input_scaled)
+        # print(features_imputed)
+
+        prediction = model.predict(input_scaled)
+        print(prediction)
+        context = {'prediction': prediction}
+
+    return render(request,"pages/prediction_investor.html",context)
+
+def InvestorBi(request):
+    return render(request, "pages/investor_BI.html")
+
+
+## investor partie hedi
+
+def getPredictions(Shares, Value):
+    model = pickle.load(open('ml_model.sav', 'rb'))
+    scaled = pickle.load(open('scaler.sav', 'rb'))
+    scaled_reverse=pickle.load(open('scaler_inverse.sav', 'rb'))
+    X=np.array([Shares,Value]).reshape(1,-1)
+    print(X)
+    prediction = model.predict(scaled.transform(X))
+    print(prediction)
+    prediction_rescaled=scaled_reverse.inverse_transform(prediction.reshape(1, -1))
+    print(prediction_rescaled)
+    return prediction_rescaled
+
+
+def result(request):
+    Shares = request.GET.get('Shares')
+    Value = request.GET.get('Value')
+    print('hello')
+    if Shares == None:
+        msg = 'enter all informations'
+        result = {'result':msg}
+        return render(request,"pages/weightning_prediction.html", {'result': result})
+    else:
+        result = getPredictions(Shares, Value)
+        return render(request,"pages/weightning_prediction.html", {'result': result[0][0]})
 
 
 

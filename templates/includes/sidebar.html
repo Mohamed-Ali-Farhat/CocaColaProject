@@ -109,6 +109,32 @@
 </script>
 
 
+<div style="position: relative;">
+
+  <!-- Your original "Sentiment Analysis" button -->
+  <a class="btn bg-gradient-primary mt-4 w-100" id="InvestorsButton"  type="button">Investors</a>
+
+  <!-- Add this container for the list of buttons -->
+  <div id="InvestorbuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
+    <!-- Add your list of buttons here -->
+    <a class="btn btn-secondary" href="{% url 'investorPrediction' %}" type="button">Investors Prediction</a>
+    <a class="btn btn-secondary" href="{% url 'investor' %}" type="button">weightning Prediction</a>
+    <a class="btn btn-secondary" href="{% url 'InvestorDashboard' %}" type="button">investor Dashboard</a>
+    <!-- Add more buttons as needed -->
+  </div>
+
+</div>
+<script>
+  $(document).ready(function () {
+      // When the "Sentiment" button is clicked
+      $("#InvestorsButton").click(function () {
+          // Toggle the visibility of the button list container
+          $("#InvestorbuttonListContainer").toggle();
+      });
+  });
+</script>
+
+
         </a>
       </li>
 
