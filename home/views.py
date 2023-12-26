@@ -348,19 +348,54 @@ def getPredictions(Shares, Value):
     return prediction_rescaled
 
 
-def result(request):
+def results(request):
     Shares = request.GET.get('Shares')
     Value = request.GET.get('Value')
     print('hello')
     if Shares == None:
         msg = 'enter all informations'
-        result = {'result':msg}
-        return render(request,"pages/weightning_prediction.html", {'result': result})
+        results = {'result':msg}
+        return render(request,"pages/weightning_prediction.html", {'results': results})
     else:
-        result = getPredictions(Shares, Value)
-        return render(request,"pages/weightning_prediction.html", {'result': result[0][0]})
+        results = getPredictions(Shares, Value)
+        return render(request,"pages/weightning_prediction.html", {'results': results[0][0]})
 
 
+##  partie sarra
+##  pepsi
+def PepsiBi(request):
+    return render(request, "pages/pepsi_BI.html")
+
+
+##  candle
+def CandleBi(request):
+    return render(request, "pages/candle_BI.html")
+
+
+def getPredictionss(AdjClose, Close):
+    model = pickle.load(open('ml_model_sarra.sav', 'rb'))
+    scaled = pickle.load(open('scaler_sarra.sav', 'rb'))
+    scaled_reverse=pickle.load(open('scaler_inverse_sarra.sav', 'rb'))
+    X=np.array([AdjClose,Close]).reshape(1,-1)
+    print(X)
+    prediction = model.predict(scaled.transform(X))
+    print(prediction)
+    prediction_rescaled=scaled_reverse.inverse_transform(prediction.reshape(1, -1))
+    print(prediction_rescaled)
+    return prediction_rescaled
+
+
+def result(request):
+    AdjClose = request.GET.get('AdjClose')
+    Close = request.GET.get('Close')
+    print('hello')
+    if AdjClose == None:
+        msg = 'enter all informations'
+        result = {'result':msg}
+        return render(request,"pages/volume_prediction.html", {'result': result})
+    else:
+        result = getPredictionss(AdjClose, Close)
+        return render(request,"pages/volume_prediction.html", {'result': result[0][0]})
 
 
 

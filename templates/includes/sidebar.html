@@ -124,6 +124,8 @@
   </div>
 
 </div>
+
+
 <script>
   $(document).ready(function () {
       // When the "Sentiment" button is clicked
@@ -133,6 +135,58 @@
       });
   });
 </script>
+<!-- boutton candle -->
+<div style="position: relative;">
+
+  <!-- Your original "Sentiment Analysis" button -->
+  <a class="btn bg-gradient-primary mt-4 w-100" id="CandleButton"  type="button">Coca Cola</a>
+
+  <!-- Add this container for the list of buttons -->
+  <div id="CandlebuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
+    <!-- Add your list of buttons here -->
+    <a class="btn btn-secondary" href="{% url 'CandlePrediction' %}" type="button">Volume Prediction</a>
+    <a class="btn btn-secondary" href="{% url 'CandleDashboard' %}" type="button">Candle Dashboard</a>
+    <!-- Add more buttons as needed -->
+  </div>
+
+</div>
+<script>
+  $(document).ready(function () {
+      // When the "Sentiment" button is clicked
+      $("#CandleButton").click(function () {
+          // Toggle the visibility of the button list container
+          $("#CandlebuttonListContainer").toggle();
+      });
+  });
+</script>
+
+<!-- boutton pepsi-->
+
+<div style="position: relative;">
+
+  <!-- Your original "Sentiment Analysis" button -->
+  <a class="btn bg-gradient-primary mt-4 w-100" id="PepsiButton"  type="button">Pepsi</a>
+
+  <!-- Add this container for the list of buttons -->
+  <div id="PepsibuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
+    <!-- Add your list of buttons here -->
+    <a class="btn btn-secondary" href="{% url 'PepsiDashboard' %}" type="button">Pepsi Dashboard</a>
+    <!-- Add more buttons as needed -->
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function () {
+      // When the "Sentiment" button is clicked
+      $("#PepsiButton").click(function () {
+          // Toggle the visibility of the button list container
+          $("#PepsibuttonListContainer").toggle();
+      });
+  });
+</script>
+
+
 
 
         </a>

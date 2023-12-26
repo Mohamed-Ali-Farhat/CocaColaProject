@@ -15,6 +15,15 @@ urlpatterns = [
 ## partie investor (mehdi)
     path('investorPrediction/',views.result_investor_prediction, name='investorPrediction'),
     path('InvestorDashboard/',views.InvestorBi,name="InvestorDashboard"),
-    path('tradePrediction/', views.result, name='investor'),
-    
+    path('tradePrediction/', views.results, name='investor'),
+
+
+
+    ## partie candle (sarra)
+    ##path('CandlePrediction/',views.getPredictionss, name='CandlePrediction'),
+    path('CandleDashboard/',views.CandleBi,name="CandleDashboard"),
+    path('CandlePrediction/', views.result, name='CandlePrediction'),
+
+    ## partie pepsi (sarra)
+     path('PepsiDashboard/',views.PepsiBi,name="PepsiDashboard"),
 ]
