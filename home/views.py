@@ -18,7 +18,6 @@ import nltk
 import pickle
 import numpy as np
 import os
-
 from django.shortcuts import render
 from django.http import HttpResponse
 import re
@@ -27,7 +26,13 @@ from keras.preprocessing.sequence import pad_sequences
 from nltk.stem import WordNetLemmatizer
 from keras.models import model_from_json
 import numpy as np
-
+from django.shortcuts import render
+from tensorflow.keras.models import load_model
+import csv
+from django.shortcuts import render
+import pandas as pd
+from datetime import date, timedelta
+from sklearn.preprocessing import StandardScaler
 
 
 
@@ -401,6 +406,71 @@ def result(request):
 
 
 
+
+
+
+
+def my_view(request):
+
+    model=load_model('model.h5')
+
+    data = pd.read_csv('KO.csv')
+
+    # Read data from CSV
+
+    first_column = []
+
+    fifth_column = []
+
+    with open("KO.csv", "r") as file:
+
+        csv_reader = csv.reader(file, delimiter=',')
+
+        next(csv_reader)  # Skip the header
+
+        for row in csv_reader:
+
+            first_column.append(row[0])  # Assuming this is a string like a date or name
+
+            fifth_column.append(float(row[4]))  # Convert to float, assuming it's a number
+
+ 
+
+    # Pass data to the template
+
+ 
+
+    X_input = data.iloc[-100:].Close.values
+
+    scaler = StandardScaler()
+
+    X_input = scaler.fit_transform(X_input.reshape(-1, 1))  
+
+    X_input = np.reshape(X_input, (1, 100, 1))  
+
+ 
+
+    simple_RNN_prediction = scaler.inverse_transform(model.predict(X_input))
+
+ 
+
+    print(simple_RNN_prediction[0])
+
+ 
+
+    context = {
+
+        'first_column': first_column,
+
+        'fifth_column': fifth_column,
+
+        'simple_RNN_prediction':simple_RNN_prediction
+
+    }
+
+ 
+
+    return render(request, 'pages/template.html', context)
 
 
 

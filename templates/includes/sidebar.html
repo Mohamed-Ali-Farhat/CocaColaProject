@@ -4,8 +4,8 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="{% url 'admin:index' %}">
-      <img src="{% static 'img/logo-ct-dark.png' %}" class="navbar-brand-img h-100" alt="main_logo">
-      <span class="ms-1 font-weight-bold">Soft UI Dashboard</span>
+      <img src="../../../../static/img/CocaLogo.png" class="navbar-brand-img h-100" alt="main_logo">
+      <span class="ms-1 font-weight-bold">Coca Cola Analysis</span>
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -145,7 +145,9 @@
   <div id="CandlebuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
     <!-- Add your list of buttons here -->
     <a class="btn btn-secondary" href="{% url 'CandlePrediction' %}" type="button">Volume Prediction</a>
+    <a class="btn btn-secondary" href="{% url 'template' %}" type="button">Price Prediction</a>
     <a class="btn btn-secondary" href="{% url 'CandleDashboard' %}" type="button">Candle Dashboard</a>
+
     <!-- Add more buttons as needed -->
   </div>
 

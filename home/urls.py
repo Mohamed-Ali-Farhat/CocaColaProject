@@ -16,7 +16,7 @@ urlpatterns = [
     path('investorPrediction/',views.result_investor_prediction, name='investorPrediction'),
     path('InvestorDashboard/',views.InvestorBi,name="InvestorDashboard"),
     path('tradePrediction/', views.results, name='investor'),
-
+    path('template/',views.my_view,name="template"),
 
 
     ## partie candle (sarra)
