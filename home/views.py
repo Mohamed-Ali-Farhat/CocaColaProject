@@ -397,7 +397,9 @@ def result(request):
         result = getPredictionss(AdjClose, Close)
         return render(request,"pages/volume_prediction.html", {'result': result[0][0]})
 
-
+#Dividends dashboard (Fourat)
+def DivBi(request):
+    return render(request, "pages/dividends_BI.html")
 
 
 
