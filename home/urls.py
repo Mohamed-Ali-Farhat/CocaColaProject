@@ -26,4 +26,7 @@ urlpatterns = [
 
     ## partie pepsi (sarra)
      path('PepsiDashboard/',views.PepsiBi,name="PepsiDashboard"),
+
+    #Dividends Dashboard (Fourat)
+    path('DividendsDashboard/',views.DivBi,name="DividendsDashboard"),
 ]
