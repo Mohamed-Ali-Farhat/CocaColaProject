@@ -4,30 +4,132 @@
 {% block content %}
 
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------->
-<p>This is my form</p>
-    <!--<form action="result">-->
-        <form action="{% url 'CandlePrediction' %}" method="get">
-   
-        <div class="form-group">
-          <input class="form-control" placeholder="AdjClose" required type="float" name="AdjClose">
-        </div>
-   
-   
-        <div class="form-group">
-          <input class="form-control" placeholder="Close" required type="float" name="Close">
-        </div>
-   
-        <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
-   
-      </form>
-    <br>  
-    <div id="predictionContainer">
-        <!-- {% if result %} -->
-       
-            <h1 style=" color: rgb(88, 180, 88); font-weight: 900;">
-             predicted volume: {{result}}
-        <!-- {% endif %} -->
-    </div>  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Your previous CSS styles here */
+
+    /* Adjustments for the form */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 18px;
+    }
+
+    /* Submit button */
+    .btn-primary {
+      background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+      color: #FFFFFF;
+      padding: 20px 40px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+    }
+
+    #predictionContainer {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: rgb(88, 180, 88);
+      font-weight: 900;
+    }
+
+    /* Your other styles here */
+  </style>
+</head>
+
+<body>
+
+  <p>This is my form</p>
+  <form action="{% url 'CandlePrediction' %}" method="get">
+    <div class="form-group">
+      <input class="form-control" placeholder="AdjClose" required type="float" name="AdjClose">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" placeholder="Close" required type="float" name="Close">
+    </div>
+
+    <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
+  </form>
+
+  <div id="predictionContainer">
+    <!-- {% if result %} -->
+    <h1 style="color: rgb(88, 180, 88); font-weight: 900;">
+      predicted volume: {{result}}
+      <!-- {% endif %} -->
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

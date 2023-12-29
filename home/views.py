@@ -50,14 +50,14 @@ def index(request):
 
 
 def sentiment(request):
-    return render(request, "includes/sentiment.html")
+    return render(request, "pages/sentiment.html")
 
 
 def sentimentDL(request):
-    return render(request, "includes/sentiment_DL.html")
+    return render(request, "pages/sentiment_DL.html")
 
 def SentimentBi(request):
-    return render(request, "includes/sentiment_BI.html")
+    return render(request, "pages/sentiment_BI.html")
 
 
 
@@ -86,7 +86,7 @@ def sentiment(request):
     # Pass the prediction value to the template context
     
 
-    return render(request, "includes/sentiment.html", context)
+    return render(request, "pages/sentiment.html", context)
 
 
 
@@ -172,9 +172,9 @@ def sentimentDL(request):
 
         sentiment_classes = ['negative', 'neutral', 'positive']
         predicted_sentiment = sentiment_classes[predicted_class]
-        return render(request, 'includes/sentiment_DL.html', {'predicted_sentiment': predicted_sentiment})
+        return render(request, 'pages/sentiment_DL.html', {'predicted_sentiment': predicted_sentiment})
 
-    return render(request, 'includes/sentiment_DL.html')  
+    return render(request, 'pages/sentiment_DL.html')  
 
 
 
@@ -358,7 +358,7 @@ def results(request):
     Value = request.GET.get('Value')
     print('hello')
     if Shares == None:
-        msg = 'enter all informations'
+        msg = 'Please enter all informations'
         results = {'result':msg}
         return render(request,"pages/weightning_prediction.html", {'results': results})
     else:

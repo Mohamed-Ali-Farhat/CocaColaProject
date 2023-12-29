@@ -71,20 +71,62 @@
   </script>
 
  
+<!DOCTYPE html>
+<html lang="en">
 
-      <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Add your styles here */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #212529;
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        <h1>Tomorrow's Closing Price Prediction</h1>
+    .container {
+      width: 400px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-        <div class="prediction">
+    h1 {
+      color: #c10b0e;
+    }
 
-            {{ simple_RNN_prediction|floatformat:2 }}
+    .prediction {
+      font-size: 36px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #0f0f0f;
+    }
+  </style>
+</head>
 
-        </div>
+<body>
 
- 
-
+  <div class="container">
+    <h1>Tomorrow's Closing Price Prediction</h1>
+    <div class="prediction">
+      {{ simple_RNN_prediction|floatformat:2 }}
     </div>
+  </div>
+
+</body>
+
+</html>
+
+
 
   <!-- <form method="get" action="{%url 'template'%}">
 

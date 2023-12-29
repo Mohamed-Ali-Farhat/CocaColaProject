@@ -1,0 +1,374 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* Your previous CSS styles here */
+  
+      /* Additional styles for the navigation */
+      #custom-nav {
+        text-align: center;
+        margin-top: 30px;
+      }
+  
+      #custom-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+  
+      #custom-nav li {
+        display: inline-block;
+        margin-right: 20px;
+      }
+  
+      .styled-button {
+        background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+        color: #FFFFFF;
+        padding: 15px 30px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+      }
+  
+      .styled-button:hover {
+        background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+      }
+  
+      /* Adjustments for the form */
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 70px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      #custom-button {
+        background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+        color: #FFFFFF;
+        padding: 15px 30px; /* Smaller size */
+        font-size: 16px; /* Smaller font size */
+        border: none;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+  
+      #custom-button:hover {
+        background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+      }
+  
+      
+      #predictionContainer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  #predictionContainer p {
+    margin-bottom: 50px;
+  }
+
+  #previousText {
+    font-size: 24px; /* Adjust the font size as needed */
+  }
+
+  .negative,
+  .neutral,
+  .positive {
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards;
+  }
+
+  .negative {
+    color: #FF0000; /* Color for negative prediction */
+    font-weight: bold;
+  }
+
+  .neutral {
+    color: #808080; /* Color for neutral prediction */
+    font-weight: bold;
+  }
+
+  .positive {
+    color: #008000; /* Color for positive prediction */
+    font-weight: bold;
+  }
+  p {
+    font-size: 40px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Adjust the line height as needed */
+    color: #555; /* Adjust the text color as needed */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+
+
+  p1 {
+    font-size: 30px; /* Adjust the font size as needed */
+    line-height: 1.6; /* Adjust the line height as needed */
+    color: #555; /* Adjust the text color as needed */
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+
+
+
+  /* Animation keyframes for fade-in effect */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
+      /* Your other styles here */
+    </style>
+  </head>
+  
+  <body>
+  <br><br>
+    <nav id="custom-nav">
+      <ul>
+        <li><button class="styled-button" onclick="goToSentiment()">Machine Learning</button></li>
+        <li><button class="styled-button" onclick="goToSentimentDL()">Deep Learning</button></li>
+      </ul>
+    </nav>
+  <br><br>
+    
+
+
+
+
+    <form action="{% url 'sentiment' %}" method="get" oninput="showPrediction()">
+      Write here your text
+      <input type="text" required name="comment" id="commentInput" oninput="updateInputSize(this)"> <br>
+      <input type="submit" name="" value="Submit" id="custom-button">
+    </form>
+  
+    <div id="predictionContainer">
+      {% if prediction %}
+      <p>Your Previous Text Was :
+        {% if prediction == '0' %}
+        <span class="negative">Negative</span>
+        {% elif prediction == '1' %}
+        <span class="neutral">Neutral</span>
+        {% elif prediction == '2' %}
+        <span class="positive">Positive</span>
+        {% endif %}
+      </p>
+      {% endif %}
+    </div>
+  
+    
+  
+    <script>
+      function showPrediction() {
+        var inputValue = document.getElementById('commentInput').value;
+        var predictionContainer = document.getElementById('predictionContainer');
+
+        if (inputValue.trim() === '') {
+          predictionContainer.innerHTML = `<p>Please enter a comment</p>`;
+        }
+      }
+
+      function goToIndex() {
+        window.location.href = '{% url "index" %}';
+      }
+
+      function goToSentiment() {
+        window.location.href = '{% url "sentiment" %}';
+      }
+
+      function goToSentimentDL() {
+        window.location.href = '{% url "sentimentDL" %}';
+      }
+
+      function updateInputSize(input) {
+        input.style.height = 'auto';
+        input.style.height = (input.scrollHeight) + 'px';
+      }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>This is A Machine Learning Model That works With 
+  <span
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "Precision.", "Extra Trees .", "fun!" ]'></span>
+     
+</h1>
+
+
+
+
+
+
+
+  </body>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </html>
+  
+  <br>
+  <br>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+
+
+
+<style>
+
+h1,h2 {
+  font-weight: 200;
+  margin: 0.4em 0;
+}
+h1 { font-size: 3.5em; }
+h2 {
+  color: #888;
+  font-size: 2em;
+}</style>
+
+
+
+
+
+<script>
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+
+
+
+</script>
+  {% include "includes/footer.html" %}
+  {% endblock content %}

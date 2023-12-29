@@ -4,7 +4,7 @@
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="{% url 'admin:index' %}">
-      <img src="../../../../static/img/CocaLogo.png" class="navbar-brand-img h-100" alt="main_logo">
+      <img src="../../../../static/img/CocaLogo.png" class="navbar-brand-img h-100" alt="main_logo" style="width: 45px; height: 90px;">
       <span class="ms-1 font-weight-bold">Coca Cola Analysis</span>
     </a>
   </div>
@@ -77,116 +77,166 @@
 
 
 
+
+
+
+
+
+
+
+
+
+          <style>
+            .testdali1 {
+              background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+              color: #FFFFFF;
+              padding: 5px 30px; /* Adjust padding for size */
+              font-size: 18px; /* Adjust font size for larger text */
+              border: none;
+              cursor: pointer;
+              display: inline-block; /* Ensure the button is displayed as a block element */
+              text-align: center; /* Center the text horizontally */
+              text-decoration: none; /* Remove underlines for links */
+              width: 180px; /* Set a fixed width for all buttons */
+            }
           
-<!-- Container for both buttons -->
-<div style="position: relative;">
+            .testdali1:hover {
+              background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+            }
 
-  <!-- Your original "Sentiment Analysis" button -->
-  <a class="btn bg-gradient-primary mt-4 w-100" id="sentimentButton"  type="button">Sentiment</a>
+            .testdali1 i {
+            margin-right: 8px; /* Adjust the spacing between the icon and text */
+        }
+          </style>
+          
+          
 
-  <!-- Add this container for the list of buttons -->
-  <div id="buttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
-    <!-- Add your list of buttons here -->
-    <a class="btn btn-secondary" href="{% url 'sentiment' %}" type="button">Sentiment Analysis</a>
+
+
+
+<div class="sidenav">
+
+
+
+  <a class="btn testdali1" id="sentimentButton"  type="button">
+  <i class="fas fa-smile"></i> Sentiment</a>
+  <div class="dropdown-container" id="buttonListContainer" >
+    <a  class="btn btn-secondary" href="{% url 'sentiment' %}" type="button">Sentiment Analysis</a>
     <a class="btn btn-secondary" href="{% url 'bi' %}" type="button">Power BI</a>
-    <!-- Add more buttons as needed -->
   </div>
 
-</div>
 
-<!-- Include jQuery library -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-<!-- jQuery script to show/hide the button list -->
-<script>
-  $(document).ready(function () {
-      // When the "Sentiment" button is clicked
-      $("#sentimentButton").click(function () {
-          // Toggle the visibility of the button list container
-          $("#buttonListContainer").toggle();
-      });
-  });
-</script>
-
-
-<div style="position: relative;">
-
-  <!-- Your original "Sentiment Analysis" button -->
-  <a class="btn bg-gradient-primary mt-4 w-100" id="InvestorsButton"  type="button">Investors</a>
-
-  <!-- Add this container for the list of buttons -->
-  <div id="InvestorbuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
-    <!-- Add your list of buttons here -->
+  <a class="btn testdali1" id="InvestorsButton" type="button"><i class="fas fa-handshake"></i>Investors</a>
+  <div class="dropdown-container" id="InvestorbuttonListContainer" >
     <a class="btn btn-secondary" href="{% url 'investorPrediction' %}" type="button">Investors Prediction</a>
-    <a class="btn btn-secondary" href="{% url 'investor' %}" type="button">weightning Prediction</a>
-    <a class="btn btn-secondary" href="{% url 'InvestorDashboard' %}" type="button">investor Dashboard</a>
-    <!-- Add more buttons as needed -->
+    <a class="btn btn-secondary" href="{% url 'investor' %}" type="button">Weighting Prediction</a>
+    <a class="btn btn-secondary" href="{% url 'InvestorDashboard' %}" type="button">Investor Dashboard</a>
   </div>
 
-</div>
 
+  <a class="btn testdali1" id="CandleButton"  type="button"> <i class="fas fa-dollar-sign"></i> <br>CocaCola</a>
 
-<script>
-  $(document).ready(function () {
-      // When the "Sentiment" button is clicked
-      $("#InvestorsButton").click(function () {
-          // Toggle the visibility of the button list container
-          $("#InvestorbuttonListContainer").toggle();
-      });
-  });
-</script>
-<!-- boutton candle -->
-<div style="position: relative;">
-
-  <!-- Your original "Sentiment Analysis" button -->
-  <a class="btn bg-gradient-primary mt-4 w-100" id="CandleButton"  type="button">Coca Cola</a>
-
-  <!-- Add this container for the list of buttons -->
-  <div id="CandlebuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
-    <!-- Add your list of buttons here -->
+  <div class="dropdown-container" id="CandlebuttonListContainer" >
     <a class="btn btn-secondary" href="{% url 'CandlePrediction' %}" type="button">Volume Prediction</a>
     <a class="btn btn-secondary" href="{% url 'template' %}" type="button">Price Prediction</a>
     <a class="btn btn-secondary" href="{% url 'CandleDashboard' %}" type="button">Candle Dashboard</a>
-
-    <!-- Add more buttons as needed -->
   </div>
 
-</div>
-<script>
-  $(document).ready(function () {
-      // When the "Sentiment" button is clicked
-      $("#CandleButton").click(function () {
-          // Toggle the visibility of the button list container
-          $("#CandlebuttonListContainer").toggle();
-      });
-  });
-</script>
 
-<!-- boutton pepsi-->
-
-<div style="position: relative;">
-
-  <!-- Your original "Sentiment Analysis" button -->
-  <a class="btn bg-gradient-primary mt-4 w-100" id="PepsiButton"  type="button">Pepsi</a>
-
-  <!-- Add this container for the list of buttons -->
-  <div id="PepsibuttonListContainer" style="position: absolute; top: 100%; left: 0; display: none; z-index: 1;">
-    <!-- Add your list of buttons here -->
-    <a class="btn btn-secondary" href="{% url 'PepsiDashboard' %}" type="button">Pepsi Dashboard</a>
-    <!-- Add more buttons as needed -->
+  <a class="btn testdali1" id="PepsiButton"  type="button">  Pepsi </a>
+  <div class="dropdown-container" id="PepsibuttonListContainer" >
+    <a class="btn btn-secondary" href="{% url 'PepsiDashboard' %}" type="button"> Pepsi Dashboard</a>
   </div>
+            
+          
+          </div>
 
-</div>
 
-<script>
-  $(document).ready(function () {
-      // When the "Sentiment" button is clicked
-      $("#PepsiButton").click(function () {
-          // Toggle the visibility of the button list container
-          $("#PepsibuttonListContainer").toggle();
-      });
-  });
-</script>
+
+
+
+
+
+          <script>
+            /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+            var dropdown = document.getElementsByClassName("btn testdali1");
+            var i;
+            
+            for (i = 0; i < dropdown.length; i++) {
+              dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                  dropdownContent.style.display = "none";
+                } else {
+                  dropdownContent.style.display = "block";
+                }
+              });
+            }
+
+            function closeDropdownOnClickOutside(event) {
+        var dropdowns = document.getElementsByClassName("btn testdali1");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var dropdownContent = dropdowns[i].nextElementSibling;
+            if (event.target !== dropdowns[i] && event.target !== dropdownContent && !dropdownContent.contains(event.target)) {
+                dropdownContent.style.display = "none";
+                dropdowns[i].classList.remove("active");
+            }
+        }
+    }
+    document.addEventListener("click", closeDropdownOnClickOutside);
+            
+            </script>
+
+<style>
+
+
+
+.dropdown-container {
+  display: none;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -349,22 +399,5 @@
     </ul>
 
   </div>
-  <div class="sidenav-footer mx-3 ">
-    <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-      <div class="full-background" style="background-image: url('{% static 'img/curved-images/white-curved.jpg' %}')"></div>
-      <div class="card-body text-start p-3 w-100">
-        <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-          <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-        </div>
-        <div class="docs-info">
-          <h6 class="text-white up mb-0">Need help?</h6>
-          <a href="https://docs.appseed.us/products/django-dashboards/soft-ui-dashboard/" 
-             target="_blank" class="btn btn-white btn-sm w-100 mb-0">Read the DOCS</a>
-        </div>
-      </div>
-    </div>
-    <a target="_blank"
-       class="btn bg-gradient-primary mt-3 w-100" 
-       href="https://appseed.us/support/">Support</a>
-  </div>
+  
 </aside>
