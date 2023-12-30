@@ -3,113 +3,77 @@
 
 {% block content %}
 
+<style>
+.styled-button {
+  background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+  color: #FFFFFF;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.styled-button:hover {
+  background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+}</style>
+
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------->
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    /* Your previous CSS styles here */
-
-    /* Adjustments for the form */
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 30px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      font-size: 18px;
-    }
-
-    /* Submit button */
-    .btn-primary {
-      background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
-      color: #FFFFFF;
-      padding: 20px 40px;
-      font-size: 20px;
-      border: none;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
-    }
-
-    #predictionContainer {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    h1 {
-      color: rgb(88, 180, 88);
-      font-weight: 900;
-    }
-
-    /* Your other styles here */
-  </style>
-</head>
-
-<body>
-
-  <p>This is my form</p>
-  <form action="{% url 'CandlePrediction' %}" method="get">
-    <div class="form-group">
-      <input class="form-control" placeholder="AdjClose" required type="float" name="AdjClose">
-    </div>
-
-    <div class="form-group">
-      <input class="form-control" placeholder="Close" required type="float" name="Close">
-    </div>
-
-    <input class="btn btn-primary btn-lg btn-block" type="submit" value='Predict'>
-  </form>
-
-  <div id="predictionContainer">
-    <!-- {% if result %} -->
-    <h1 style="color: rgb(88, 180, 88); font-weight: 900;">
-      predicted volume: {{result}}
-      <!-- {% endif %} -->
+<div class="container">
+  <div class="card">
+      <form action="{% url 'CandlePrediction' %}" method="get">
+          <div class="form-group">
+              <input class="form-control" placeholder="AdjClose" required type="float" name="AdjClose">
+          </div>
+          <div class="form-group">
+              <input class="form-control" placeholder="Close" required type="float" name="Close">
+          </div>
+          <br><br><br><br>
+          <input class="styled-button" type="submit" value='Predict'>
+      </form>
   </div>
+  <div class="card">
+    <IMG SRC="https://cdn.dribbble.com/users/1525393/screenshots/15425386/media/c11dce4f67e9d6620dbd6f047932c493.gif" style="width:100%;height:100%;">
+  </div>
+  
+  
+</div>
+<div class="container">
+  <div id="predictionContainer" class="card2">
+    {% if result.result %} 
+    <script>
+    var txt = '{{ result.result }}';
+   </script>
+     {% else %}
+       <script>
+         var txt = 'Predicted Volume:\n{{ result }}';
+     </script>
+     {% endif %} 
+     <p id="demo" style="font-size: 40px; margin-top: 10px;"></p>
+  </div>
+</div>
+  
 
-</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var i = 0;
+    var speed = 50;
 
-</html>
+    function typeWriter() {
+      var demoElement = document.getElementById("demo");
+      if (i < txt.length) {
+        demoElement.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    typeWriter();
+  });
+</script>
 
 
 
@@ -118,6 +82,47 @@
 
 
 
+
+
+<style>
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+  }
+
+  .container {
+      display: flex;
+  }
+
+  .card {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      height: 300px;
+  }
+  .card2 {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: 200px;
+      
+  }
+</style>
+
+
+
+
+
+  
 
 
 
