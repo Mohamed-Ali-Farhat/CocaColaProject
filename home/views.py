@@ -33,6 +33,11 @@ from django.shortcuts import render
 import pandas as pd
 from datetime import date, timedelta
 from sklearn.preprocessing import StandardScaler
+#Libraries needed for price change prediction (Fourat)
+#import yfinance as yf
+from scipy import stats
+import joblib
+from keras.models import load_model
 
 
 
@@ -405,7 +410,9 @@ def result(request):
 #Dividends dashboard (Fourat)
 def DivBi(request):
     return render(request, "pages/dividends_BI.html")
-
+#Price change prediction page (Fourat)
+def PriceChangePrediction(request):
+    return render(request, "pages/price_chg_prediction.html")
 
 
 
@@ -482,7 +489,35 @@ def aboutUsPage(request):
     return render(request,'pages/about_us.html')
 
 
+## Price change prediction (Partie DL Fourat)
 
+def result_price_chg_prediction(request):
+
+    df = pd.read_csv('KO.csv')
+    df_reduced = df.drop(['Open','High','Low','Adj Close','Volume'], axis=1)
+    d_returns = df_reduced['Close'] - df_reduced['Close'].shift(21)
+    df_reduced['Ret'] = d_returns
+    df_reduced = df_reduced.iloc[21:]
+    window_size = 7
+    RET_MA = df_reduced['Ret'].rolling(window=window_size).mean() #Moving average
+    RET_MA = RET_MA.dropna()
+    loaded_scaling_params = joblib.load('scaling_params.joblib')
+
+# Use the loaded scaling parameters to scale new data
+    new_data_scaled = (RET_MA - loaded_scaling_params['mean']) / loaded_scaling_params['std']
+    model_input=new_data_scaled[-1:]
+
+# Load the model
+    model = load_model('best_model.h5')
+
+    prediction = model.predict(model_input)
+
+    predicted_value_original = (prediction * loaded_scaling_params['std']) + loaded_scaling_params['mean']
+
+    print(predicted_value_original)
+    context = {'prediction_original': predicted_value_original}
+
+    return render(request,"pages/price_chg_prediction.html",context)
 
 
 

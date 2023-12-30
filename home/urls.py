@@ -33,4 +33,6 @@ urlpatterns = [
 
     #about page
     path('AboutUs/',views.aboutUsPage,name="aboutUs"),
+    #Price change prediction (Fourat)
+    path('PriceChangePrediction/',views.result_price_chg_prediction,name="PriceChangePrediction"),
 ]
