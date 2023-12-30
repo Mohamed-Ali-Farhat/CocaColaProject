@@ -476,6 +476,13 @@ def my_view(request):
 
 
 
+## about us page 
+
+def aboutUsPage(request):
+    return render(request,'pages/about_us.html')
+
+
+
 
 
 

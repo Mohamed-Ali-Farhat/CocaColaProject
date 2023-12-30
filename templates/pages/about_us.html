@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="ETP Test Project - page 1">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Premier Event Technology</title>
+	<!-- <link href="style.css" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>@charset "utf-8";
+        /* CSS Document */
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #181515;
+        }
+        h3 {color: #e03333;}
+        div.logo {
+            max-width: 75px;
+            float: left;
+            padding: 5px;
+        }
+        /* ----------------MENU Style--------- */
+        .nav {
+            float: right;
+            
+        }
+        
+        *{text-decoration:none; list-style:none; margin:0px; padding:0px; outline:none;}
+        
+        nav{width:auto; float:right;}
+        nav ul{display:table; float:right;}
+        nav ul li{float:left;}
+        nav ul li:last-child{padding-right:0px;}
+        nav ul li a{color:#ffffff; font-size:18px; padding: 25px 20px; display:inline-block; transition: all 0.5s ease 0s;text-transform: uppercase;}
+        nav ul li a:hover{background-color:#e03333; color:#fff; transition: all 0.5s ease 0s;}
+        nav ul li a:hover i{color:#fff; transition: all 0.5s ease 0s;}
+        nav ul li a i{padding-right:10px; color:#12a8e1; transition: all 0.5s ease 0s;}
+        
+        .toggle-menu ul{display:table; width:25px;}
+        .toggle-menu ul li{width:100%; height:3px; background-color:#12a8e1; margin-bottom:4px;}
+        .toggle-menu ul li:last-child{margin-bottom:0px;}
+        
+        input[type=checkbox], label{display:none;}
+        
+        @media only screen and (max-width: 980px) {
+            input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
+            input[type=checkbox]:focus{background:none;}
+            label {float:right; padding:8px 0px; display:inline-block; cursor:pointer; }
+            input[type=checkbox]:checked ~ nav {display:block;}
+        
+            nav{display:none; position:absolute; right:0px; top:53px; background-color:#e03333; padding:0px; z-index:99;}
+            nav ul{width:auto;}
+            nav ul li{float:none; padding:0px; width:100%; display:table;}
+            nav ul li a{color:#FFF; font-size:15px; padding:10px 20px; display:block; border-bottom: 1px solid rgba(225,225,225,0.1);}
+            nav ul li a i{color:#fff; padding-right:13px;}
+        }
+        
+        @media only screen and (max-width: 360px) {
+            label{padding:5px 0px;}
+            nav{top:47px;}
+        }
+        /* ----------------END Menu Style--------- */
+        
+        /* ----------------HOME Banner Style--------- */
+        .hero-image-home {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("home-banner.jpg");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .hero-image-about {
+            background-image: linear-gradient(to top,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("../../static/img/aboutUs.jpg");
+            height: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        
+        /* Style for Text on the main banner */
+        .hero-text {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+        h1{
+            text-transform: uppercase;
+            font-size: 3.5em;
+            font-family: 'Noto Sans SC', sans-serif;
+            font-weight: 100;
+            margin: 0;
+            text-shadow: 2px 0 #000;
+        }
+        .hero-subtitle {
+            font-size: 2.5em;
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            text-shadow:3px 3px 3px #000;
+        }
+        @media screen and (max-width: 800px) {
+            h1{
+                font-size: 2.5em;
+            }
+            .hero-subtitle {
+                font-size: 2em;
+            }
+        }
+        @media screen and (max-width: 585px) {
+            h1{
+                font-size: 2em;
+            }
+            .hero-subtitle {
+                font-size: 1.5em;
+            }
+        }
+        /* ----------------END Main Banner Style--------- */
+        
+        /* ---------------- Main Content --------- */
+        .content {
+            margin: auto;
+            max-width: 800px;
+            padding: 3em;
+            text-align: center;
+            color: #808080;
+        }
+        .blue-text{
+            color: #e03333;
+            text-transform: uppercase;
+            font-size: 1.3em;
+        }
+        #text {
+            padding-top: 1em;
+        }
+        img {
+          width: 100%;
+          display: block;
+        }
+        
+        /* Homepage Images Grid */
+        #imageGrid {
+            max-width: 1200px;
+            margin: auto;
+        }
+        @media (min-width: 500px) {
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 2rem;
+              }
+        }
+        @media (min-width: 800px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .grid-group {
+            margin-bottom: 3rem;
+            font-size: .7em;
+            padding: 0 10px;
+        }
+        @media (min-width: 500px) {
+            .grid-group {
+                margin-bottom: 0;
+              }
+        }
+        .blue {
+            color: #e03333;
+            font-weight: bold;
+        }
+        /* ---------------- END Main Content --------- */
+        
+        /* ----------------  Footer  --------- */
+        footer {
+            background-color: #F5F5F5;
+            color: #000;
+            margin-top: 2em;
+        }
+        .footerColumn {
+            float: left;
+            width: 50%;
+        }
+        .footerRow:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+          .footerColumn {
+            width: 100%;
+            text-align: center;
+          }
+        }
+        /* Copyright Links */
+        #Copyright {
+            padding-right: 100px;
+            padding-top: 1em;
+            text-align: right;
+        }
+        @media screen and (max-width: 600px) {
+            #Copyright {
+                width: 100%;
+              text-align: center;
+              padding-right: 0;
+          }
+        }
+        .footerMenu {
+            list-style-type: none;
+            display: inline;
+            padding-right: 1em;
+            padding-top: 1em;
+        }
+        .footerMenu a:link {
+            text-decoration: none;
+            color: #e03333;
+        }
+        .footerMenu a:hover {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .footerMenu a:visited  {
+            text-decoration: none;
+            color: #e03333;
+        }
+        .footerMenu a:active  {
+            text-decoration: none;
+            color: #e03333;
+        }
+        .blueLink {color: #e03333;}
+        
+        /* Social Media Icons */
+        #SocialMedia {
+            padding-left: 150px;
+        }
+        @media screen and (max-width: 900px) {
+          #SocialMedia {
+            padding-left: 0;
+          }
+        }
+        .fab {
+          padding: 10px;
+          font-size: 20px;
+          width: 25px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+        }
+        .fab:hover {
+            color: #e03333;
+        }
+        .fa-facebook-f {
+          color: #808080;
+        }
+        .fa-twitter {
+          color: #808080;
+        }
+        .fa-linkedin-in {
+          color: #808080;
+        }
+        
+        /* ----------------  About Page  --------- */
+        #services {
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        @media (min-width: 500px) {
+            .grid-services {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 2rem;
+              }
+        }
+        @media (min-width: 800px) {
+            .grid-services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .grid-group-services {
+            margin-bottom: 3rem;
+            font-size: .7em;
+            padding: 0 10px;
+        }
+        @media (max-width: 500px) {
+            .grid-group-services {
+                height: 100px;
+              }
+        }
+        .fas  {
+          padding: 10px;
+          font-size: 50px;
+          width: 55px;
+          text-align: center;
+          text-decoration: none;
+          margin: 5px 2px;
+        }
+        @media (max-width: 950px) {
+            .fas {
+                font-size: 35px;
+                width: 40px;
+              }
+        }
+        @media (max-width: 650px) {
+            .fas {
+                font-size: 25px;
+                width: 30px;
+              }
+        }
+        .fa-video, .fa-volume-up, .fa-bolt, .fa-pencil-ruler, .fa-paint-brush, .fa-ship, .fa-arrow-trend-up, .glyphicon-piggy-bank, .glyphicon-eye-open, .glyphicon-king {
+            color: #e03333;
+        }
+        .services-icon {
+            float: left;
+        }
+        .services-description {
+            float: right;
+            width: 70%;
+            font-size: 1.3em;
+            color: #808080;
+        }
+        .team-section{
+            margin-top: 75px;
+            text-align: center;
+        }
+        .team-cards{
+            width: 85%;
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .team-card{
+            border-radius: 50px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 0px 20px;
+            text-align: center;
+            transition: transform 0.6s ease;
+            width:calc(33.33%- 20px);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .team-card:hover{
+            transform: translateY(-12px);
+        }
+        .team-image img{
+            border-radius: 50%;
+            height: 130px;
+            width: 130px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .team-details h3{
+            color: #FFF;
+            font-size: 30px;
+            margin: 15px 0px;
+        }
+        .team-details p{
+            color: #426385;
+            font-size: 18px;
+            margin: 15px 0px;
+        }
+        </style>
+</head>
+<body>
+	<div class="hero-image-about">
+		<div class="logo">
+			<a href="{% url 'index' %}"><img src="../../static/img/CocaLogo.png" alt="Premier Event Technology Logo"/></a>
+		</div>
+		<label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
+		<input type="checkbox" id="toggle-1">
+		<nav>
+			<ul>
+				<!-- Edit Menu Links -->
+				<li><a href="#service">About</a></li>
+				<li><a href="{% url 'index' %}">Home</a></li>
+				<li><a href="#vision">Our Vision</a></li>
+				<li><a href="#team">Our Team</a></li>
+				<li><a href="#">Contact Us</a></li>
+				<!-- END Menu Links -->
+			</ul>
+		</nav>
+		
+		<!-- Edit Banner Text -->
+		<div class="hero-text">
+			<h1>About Us</h1>
+			<p class="hero-subtitle">Analyize your target.</p>
+		</div>
+		<!-- END Banner Text -->
+	</div>
+	<main>
+		<article class="main" id="service">
+			<section class="content">
+				<!-- Edit Homepage Text -->
+				<p class="blue-text">Our <strong>Services</strong></p>
+				<p id="text">Embark on a transformative investment journey with our suite of services designed to redefine the way you approach the stock market.</p>
+				<!-- END Homepage Text -->
+			</section>
+			<div id="services">
+				<section class="grid-services">
+				  	<!-- Edit Services Section -->
+					<div class="grid-group-services">
+						<div class="grid-group-services-box">
+							<div class="services-icon">
+								<i class="fas glyphicon glyphicon-piggy-bank"></i>
+							</div>
+							<div class="services-description">
+							<!-- Edit Video Section -->
+								<h3>Stock Price Analysis</h3>
+								<p>Unlock the true potential of your investments with our comprehensive Stock Price Analysis service. Leveraging state-of-the-art machine learning models and sophisticated data analytics, we delve deep into the intricate patterns and trends of Coca-Cola stock prices. Our meticulous approach not only provides you with real-time insights but also equips you with the foresight needed to navigate the dynamic landscape of the stock market. Whether you are a seasoned investor or a newcomer to the financial arena, our Stock Price Analysis service empowers you with the knowledge to make informed decisions and stay ahead of market movements.</p>
+							<!-- END Video Section -->
+							</div>
+						</div>
+					</div>
+					<div class="grid-group-services">
+						<div class="grid-group-services-box">
+							<div class="services-icon">
+								<i class="fas glyphicon glyphicon-eye-open"></i>
+							</div>
+							<div class="services-description">
+								<!-- Edit Audio Section -->
+								<h3>Sentiment Tracking:</h3>
+								<p>Stay ahead of market sentiment fluctuations with our dedicated Sentiment Tracking service. We understand the power of public perception in influencing stock prices, and our advanced sentiment analysis tools keep you in the loop. By monitoring social media, news, and other relevant sources, we provide you with a comprehensive understanding of how public sentiment is shaping the market dynamics for Coca-Cola stock. Armed with this information, you can strategically position your investments, capitalize on positive sentiments, and navigate potential risks with confidence.</p>
+								<!-- END Audio Section -->
+							</div>
+						</div>
+					</div>
+					<div class="grid-group-services">
+						<div class="grid-group-services-box">
+							<div class="services-icon">
+								<i class="fas glyphicon glyphicon-king"></i>
+							</div>
+							<div class="services-description">
+								<!-- Edit Lighting Section -->
+								<h3>Investor-Focused Insights:</h3>
+								<p>Tailor your investment strategy to your unique needs with our Investor-Focused Insights service. We recognize that each investor has distinct goals and risk tolerance levels, and our service is designed to cater to those individual preferences. Through personalized data-driven insights, we guide you in making informed decisions aligned with your investment objectives. Whether you're seeking long-term stability, short-term gains, or a balanced portfolio, our Investor-Focused Insights service ensures that your investment strategy is finely tuned to match your financial aspirations.</p>
+								<!-- END Lighting Section -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- END Services Section -->
+			</div>
+		</article>
+        <article class="main" id="vision">
+			<section class="content">
+				<!-- Edit Homepage Text -->
+				<p class="blue-text">our <strong>Vision</strong></p>
+				<p id="text">At our core, we are a dynamic team with a shared passion for decoding the complexities of the financial world, particularly in the context of Coca-Cola stock. With a relentless commitment to data-driven insights, we specialize in leveraging advanced analytics, Power BI, and machine learning models to provide investors with unparalleled stock price analyses. Our journey began with a vision to empower investors through cutting-edge technology, and we have since evolved into a trusted source for comprehensive and actionable market intelligence.</p>
+				<!-- END Homepage Text -->
+			</section>
+		</article>
+        <article class="main" id="team">
+			<section class="content team-section">
+				<!-- Edit Homepage Text -->
+				<p class="blue-text">our <strong>Team</strong></p>
+				<p id="text">Our team is a harmonious blend of expertise and innovation, united by a shared vision of revolutionizing the investor experience. Comprising seasoned professionals in finance, data science, and technology, we bring a diverse range of skills to the table. Together, we form a collaborative force dedicated to pushing the boundaries of what's possible in the world of stock market analysis. With a deep understanding of both the nuances of financial data and the power of cutting-edge technology, our team stands as a testament to our commitment to excellence and the pursuit of a smarter, more accessible investment landscape.</p>
+				<div class="team-cards">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="../../static/img/PHOTO.jpg">
+                        </div>
+                        <div class="team-detail">
+                            <h3>Mehdi Fgaier</h3>
+                            <p>designer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Homepage Text -->
+			</section>
+		</article>
+	</main>
+	<footer class="footerRow">
+		<div class="footerColumn">
+			<span id="SocialMedia">
+				<a href="https://www.facebook.com/premiereventtechnology?fref=ts" target="_blank" class="fab fa-facebook-f"></a>
+				<a href="https://twitter.com/PremierEventAV" target="_blank" class="fab fa-twitter"></a>
+				<a href="https://www.linkedin.com/company/premier-creative-gorup/?trk=prof-following-company-logo" target="_blank" class="fab fa-linkedin-in"></a>
+			</span>
+		</div>
+		<div class="footerColumn">
+				<ol id="Copyright">
+					<!-- Edit Footer Links -->
+					<li class="footerMenu"><a href="#" class="blueLink">Terms of Use</a></li>
+					<li class="footerMenu"><a href="#" class="blueLink">Privacy Policy</a></li>
+					<!-- END Footer Links -->
+				</ol>
+		</div>
+	</footer>
+<script>
+	function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "menu") {
+			x.className += " responsive";
+		  } else {
+			x.className = "menu";
+		  }
+	} 
+</script>
+</body>
+</html>

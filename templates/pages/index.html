@@ -12,10 +12,10 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's open Price</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $53,000
-                      <span class="text-success text-sm font-weight-bolder">+55%</span>
+                      $58,93
+                      <span class="text-success text-sm font-weight-bolder">+0.18%</span>
                     </h5>
                   </div>
                 </div>
@@ -34,10 +34,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Share Holders around the world</p>
                     <h5 class="font-weight-bolder mb-0">
-                      2,300
-                      <span class="text-success text-sm font-weight-bolder">+3%</span>
+                      289
                     </h5>
                   </div>
                 </div>
@@ -51,15 +50,14 @@
           </div>
         </div>
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
-          <div class="card">
+          <div class="card">  
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">New Clients</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold">HouseHold Penetration</p>
                     <h5 class="font-weight-bolder mb-0">
-                      +3,462
-                      <span class="text-danger text-sm font-weight-bolder">-2%</span>
+                      91.1%
                     </h5>
                   </div>
                 </div>
@@ -78,9 +76,9 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-capitalize font-weight-bold">Sales</p>
+                    <p class="text-sm mb-0 text-capitalize font-weight-bold"> brand worth</p>
                     <h5 class="font-weight-bolder mb-0">
-                      $103,430
+                      $74 billion
                       <span class="text-success text-sm font-weight-bolder">+5%</span>
                     </h5>
                   </div>
@@ -103,10 +101,10 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">Built by developers</p>
-                    <h5 class="font-weight-bolder">Soft UI Dashboard</h5>
-                    <p class="mb-5">From colors, cards, typography to complex elements, you will find the full documentation.</p>
-                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
+                    <p class="mb-1 pt-2 text-bold">Built by</p>
+                    <h5 class="font-weight-bolder">CocaCola Analytics</h5>
+                    <p class="mb-5">At our core, we are a dynamic team with a shared passion for decoding the complexities of the financial world, particularly in the context of Coca-Cola stock. With a relentless commitment to data-driven insights, we specialize in leveraging advanced analytics, Power BI, and machine learning models to provide investors with unparalleled stock price analyses. Our journey began with a vision to empower investors through cutting-edge technology, and we have since evolved into a trusted source for comprehensive and actionable market intelligence.</p>
+                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="{% url 'aboutUs' %}">
                       Read More
                       <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
                     </a>
@@ -116,7 +114,7 @@
                   <div class="bg-gradient-primary border-radius-lg h-100">
                     <img src="{% static 'img/shapes/waves-white.svg' %}" class="position-absolute h-100 w-50 top-0 d-lg-block d-none" alt="waves">
                     <div class="position-relative d-flex align-items-center justify-content-center h-100">
-                      <img class="w-100 position-relative z-index-2 pt-4" src="{% static 'img/illustrations/rocket-white.png' %}" alt="rocket">
+                      <img class="w-100 position-relative z-index-2 pt-4" src="../../static/img/CocaLogo.png" alt="rocket">
                     </div>
                   </div>
                 </div>
@@ -126,22 +124,18 @@
         </div>
         <div class="col-lg-5">
           <div class="card h-100 p-3">
-            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('{% static 'img/ivancik.jpg' %}');">
+            <div class="overflow-hidden position-relative border-radius-lg bg-cover h-100" style="background-image: url('../../static/img/collab.jpg');">
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-                <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It is all about who take the opportunity first.</p>
-                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                  Read More
-                  <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                </a>
+                <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the US</h5>
+                <p class="text-white">Choosing our services means partnering with a team that brings a unique blend of expertise, innovation, and unwavering commitment to your investment journey. Our Stock Price Analysis service goes beyond the numbers, offering a nuanced understanding of Coca-Cola stock trends that empowers you to make strategic decisions with confidence. With Sentiment Tracking, we put the power of market perception in your hands, helping you stay ahead of the curve in an ever-changing financial landscape. Our Investor-Focused Insights service is not a one-size-fits-all solution; it's a personalized approach to investment that considers your unique goals and risk preferences.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row mt-4">
+      <!-- <div class="row mt-4">
         <div class="col-lg-5 mb-lg-0 mb-4">
           <div class="card z-index-2">
             <div class="card-body p-3">
@@ -257,24 +251,7 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="card z-index-2">
-            <div class="card-header pb-0">
-              <h6>Sales overview</h6>
-              <p class="text-sm">
-                <i class="fa fa-arrow-up text-success"></i>
-                <span class="font-weight-bold">4% more</span> in 2021
-              </p>
-            </div>
-            <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </div> -->
 
       <div class="row my-4">
         <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
@@ -282,11 +259,11 @@
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Projects</h6>
-                  <p class="text-sm mb-0">
+                  <h6>Top Companies</h6>
+                  <!-- <p class="text-sm mb-0">
                     <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
-                  </p>
+                    <span class="font-weight-bold ms-1">6</span> this month
+                  </p> -->
                 </div>
                 <div class="col-lg-6 col-5 my-auto text-end">
                   <div class="dropdown float-lg-end pe-4">
@@ -308,7 +285,6 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Companies</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Members</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Budget</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Completion</th>
                     </tr>
@@ -317,42 +293,23 @@
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-xd.svg' %}" class="avatar avatar-sm me-3" alt="xd">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
+                            <h6 class="mb-0 text-sm">Apple </h6>
                           </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{% static 'img/team-1.jpg' %}" alt="team1">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{% static 'img/team-2.jpg' %}" alt="team2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="{% static 'img/team-3.jpg' %}" alt="team3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="team4">
-                          </a>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $14,000 </span>
+                        <span class="text-xs font-weight-bold"> 192,53 USD</span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">60%</span>
+                              <span class="text-xs font-weight-bold">0,54 %</span>
                             </div>
-                          </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                           </div>
                         </div>
                       </td>
@@ -360,188 +317,129 @@
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-atlassian.svg' %}" class="avatar avatar-sm me-3" alt="atlassian">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                            <h6 class="mb-0 text-sm">Microsoft</h6>
                           </div>
-                        </div>
-                      </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{% static 'img/team-2.jpg' %}" alt="team5">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="team6">
-                          </a>
                         </div>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $3,000 </span>
+                        <span class="text-xs font-weight-bold"> 376,04 USD </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">10%</span>
+                              <span class="text-xs font-weight-bold">0,20 %</span>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                          
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-slack.svg' %}" class="avatar avatar-sm me-3" alt="team7">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                            <h6 class="mb-0 text-sm">Nvidia</h6>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{% static 'img/team-3.jpg' %}" alt="team8">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{% static 'img/team-1.jpg' %}" alt="team9">
-                          </a>
-                        </div>
-                      </td>
+                     
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> Not set </span>
+                        <span class="text-xs font-weight-bold"> 495,22 USD </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">100%</span>
+                              <span class="text-xs font-weight-bold">0,00 %</span>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                          
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-spotify.svg' %}" class="avatar avatar-sm me-3" alt="spotify">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                            <h6 class="mb-0 text-sm">Amazon</h6>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="user1">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
-                            <img src="{% static 'img/team-3.jpg' %}" alt="user2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="user3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{% static 'img/team-1.jpg' %}" alt="user4">
-                          </a>
-                        </div>
-                      </td>
+                      
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $20,500 </span>
+                        <span class="text-xs font-weight-bold"> 151,94 USD </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">100%</span>
+                              <span class="text-xs font-weight-bold">−1,44 (0,94 %)</span>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                          
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-jira.svg' %}" class="avatar avatar-sm me-3" alt="jira">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                            <h6 class="mb-0 text-sm">Intel</h6>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="user5">
-                          </a>
-                        </div>
-                      </td>
+                    
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $500 </span>
+                        <span class="text-xs font-weight-bold"> 50,25 USD </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">25%</span>
+                              <span class="text-xs font-weight-bold">−0,14 (0,28 %)</span>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
-                          </div>
+                         
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
-                          <div>
+                          <!-- <div>
                             <img src="{% static 'img/small-logos/logo-invision.svg' %}" class="avatar avatar-sm me-3" alt="invision">
-                          </div>
+                          </div> -->
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                            <h6 class="mb-0 text-sm">McDonald's</h6>
                           </div>
                         </div>
                       </td>
-                      <td>
-                        <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
-                            <img src="{% static 'img/team-1.jpg' %}" alt="user6">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
-                            <img src="{% static 'img/team-4.jpg' %}" alt="user7">
-                          </a>
-                        </div>
-                      </td>
+                     
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold"> $2,000 </span>
+                        <span class="text-xs font-weight-bold">  296,51 USD </span>
                       </td>
                       <td class="align-middle">
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">40%</span>
+                              <span class="text-xs font-weight-bold"> +0,67 (0,23 %)</span>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-                          </div>
+                          
                         </div>
                       </td>
                     </tr>
@@ -554,10 +452,10 @@
         <div class="col-lg-4 col-md-6">
           <div class="card h-100">
             <div class="card-header pb-0">
-              <h6>Orders overview</h6>
+              <h6>Latest CocaCola news</h6>
               <p class="text-sm">
                 <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                <span class="font-weight-bold">24%</span> this month
+                <span class="font-weight-bold"></span> this month
               </p>
             </div>
             <div class="card-body p-3">
@@ -567,8 +465,8 @@
                     <i class="ni ni-bell-55 text-success text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">ICC extends multi-million dollar sponsorship deal with Coca-Cola</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 26, 2023</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -576,8 +474,8 @@
                     <i class="ni ni-html5 text-danger text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">UK PM Rishi Sunak marks Christmas with 'Home Alone' skit</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 26, 2023</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -585,8 +483,8 @@
                     <i class="ni ni-cart text-info text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Coca-Cola extends partnership with ICC till 2031</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 26, 2023</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -594,8 +492,8 @@
                     <i class="ni ni-credit-card text-warning text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Gujarat Titans secure Spencer Johnson for Rs 10 crore in IPL auction 2024</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 21, 2023</p>
                   </div>
                 </div>
                 <div class="timeline-block mb-3">
@@ -603,8 +501,8 @@
                     <i class="ni ni-key-25 text-primary text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">IPL 2024 Auction: All you need to know about the mini yet a 'crucial' auction</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 19, 2023</p>
                   </div>
                 </div>
                 <div class="timeline-block">
@@ -612,8 +510,8 @@
                     <i class="ni ni-money-coins text-dark text-gradient"></i>
                   </span>
                   <div class="timeline-content">
-                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
+                    <h6 class="text-dark text-sm font-weight-bold mb-0">Coca Cola plans Rs 3,000 crore investment in Gujarat's Sanand</h6>
+                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">Dec 08, 2023</p>
                   </div>
                 </div>
               </div>

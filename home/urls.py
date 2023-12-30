@@ -29,4 +29,8 @@ urlpatterns = [
 
     #Dividends Dashboard (Fourat)
     path('DividendsDashboard/',views.DivBi,name="DividendsDashboard"),
+
+
+    #about page
+    path('AboutUs/',views.aboutUsPage,name="aboutUs"),
 ]

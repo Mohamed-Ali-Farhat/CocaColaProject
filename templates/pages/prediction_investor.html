@@ -2,30 +2,80 @@
 {% load static %}
 
 {% block content %}
+<style>
+  .styled-button {
+    background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+    color: #FFFFFF;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .styled-button:hover {
+    background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+  }
+  .form-group {
+    align-items: center;
+  }
+  </style>
 
-<form action="{%url 'investorPrediction' %}">
-shortest concecutive holding period : <input type="text" id="shortest_period" required name="shortest_period"><br> <br>
-Longest concecutive holding period : <input type="text" id="longuest_period" required name="longuest_period"><br> <br>
-average weightning : <input type="text" id="average_weightning" required name="average_weightning"><br> <br>
-average value : <input type="text" id="average_value" required name="average_value"><br> <br>
-average shares : <input type="text" id="average_shares" required name="average_shares"><br> <br>
-<input type="submit" name="" value="submit">
-</form>
-<div id="predictionContainer">
+
+
+<div class="container">
+  <div class="card">
+    <form action="{%url 'investorPrediction' %}">
+      <div class="form-group">shortest concecutive holding period : <input type="text" id="shortest_period" required name="shortest_period"><br> <br></div>
+      <div class="form-group">Longest concecutive holding period : <input type="text" id="longuest_period" required name="longuest_period"><br> <br></div>
+      <div class="form-group">average weightning : <input type="text" id="average_weightning" required name="average_weightning"><br> <br></div>
+      <div class="form-group">average value : <input type="text" id="average_value" required name="average_value"><br> <br></div>
+      <div class="form-group">average shares : <input type="text" id="average_shares" required name="average_shares"><br> <br></div>
+    <input type="submit" name="" value="Predict" class="styled-button">
+    </form>
+  </div>
+  <div id="predictionContainer" class="card2">
     {% if prediction %}
-        <p>Investor class: 
             {% if prediction == 0 %}
-                <span class="0">0</span>
+               <script> txt = "0.this investor Aggressive growth, investors are individuals who seek maximum capital appreciation and are willing to take on a high level of risk in their investment portfolio. They are often attracted to emerging markets, speculative stocks, and innovative industries with high growth potential. Aggressive growth investors typically have a longer investment horizon and are less concerned with short-term market fluctuations."</script>
             {% elif prediction == 1 %}
-                <span class="1">1</span>
-            {% elif prediction == 2 %}
-                <span class="2">2</span>
+                <script>txt = "1.this type is High growth investors focus on companies and sectors that demonstrate strong growth prospects. While they are open to taking on a moderate level of risk, their approach is more calculated compared to aggressive growth investors. High growth investors aim to capitalize on opportunities in dynamic markets, favoring companies with above-average earnings growth and potential for market outperformance."</script>
+            {% elif prediction == 2%}
+            <script>txt = "2.this type is Growth and income investors seek a balance between capital appreciation and generating a steady stream of income from their investments. They often invest in a mix of growth-oriented assets, such as stocks with growth potential, and income-producing assets, such as dividend-paying stocks or bonds. This approach aims to provide both capital growth and a reliable income stream for investors."</script>
+                
             {% elif prediction == 3 %}
-                <span class="3">3</span>
+            <script>txt = "3.this type is Balanced income investors prioritize a stable and predictable income stream while maintaining a cautious approach to risk. They typically allocate their investments across a mix of income-generating assets, such as bonds, dividend-paying stocks, and other conservative investments. The goal is to achieve a balance between capital preservation and generating a consistent flow of income, making this strategy suitable for investors with a more conservative risk tolerance."</script>
+            {% else %}
+                <script>txt ="Please enter all Informations"</script>
             {% endif %}
-        </p>
+            <p id="demo"></p>
     {% endif %}
 </div>
+</div>
+</div>
+<div class="container">
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var i = 0;
+      var speed = 10;
+  
+      function typeWriter() {
+        var demoElement = document.getElementById("demo");
+        if (i < txt.length) {
+          demoElement.innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+  
+      typeWriter();
+    });
+    </script>
+
 <script>
     function showPrediction() {
         var shortest_period = document.getElementById('shortest_period').value;
@@ -40,7 +90,40 @@ average shares : <input type="text" id="average_shares" required name="average_s
         }
     }
 </script>
+<style>
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+  }
 
+  .container {
+      display: flex;
+  }
+
+  .card {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      height: 820px;
+  }
+  .card2 {
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      height: 240px;
+      display: flex;
+      
+  }
+</style>
 
 {% include "includes/footer.html" %}
 {% endblock content %}

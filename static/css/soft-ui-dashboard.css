@@ -12793,7 +12793,7 @@ textarea.form-control-lg {
 
 */
 .alert-primary {
-  background-image: linear-gradient(310deg, #7928CA 0%, #d6006c 100%); }
+  background-image: linear-gradient(310deg, #000000 0%, #d6006c 100%); }
 
 .alert-secondary {
   background-image: linear-gradient(310deg, #627594 0%, #8ca1cb 100%); }
@@ -13405,7 +13405,7 @@ textarea.form-control-lg {
   .card.card-background.card-background-mask-primary:before {
     background: rgba(0, 0, 0, 0.2); }
   .card.card-background.card-background-mask-primary:after {
-    background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%);
+    background-image: linear-gradient(310deg, #000000 0%, #FF0080 100%);
     opacity: .85; }
   .card.card-background.card-background-mask-secondary:before {
     background: rgba(0, 0, 0, 0.2); }
@@ -13922,7 +13922,7 @@ label,
     
   
 .bg-gradient-primary {
-  background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%); }
+  background-image: linear-gradient(310deg, #000000 0%, #FF0000 100%); }
 
 .bg-gradient-secondary {
   background-image: linear-gradient(310deg, #627594 0%, #A8B8D8 100%); }
@@ -14082,10 +14082,10 @@ label,
     overflow: hidden; }
 
 svg.text-primary .color-foreground {
-  fill: #7928CA; }
+  fill: #000000; }
 
 svg.text-primary .color-background {
-  fill: #FF0080; }
+  fill: #FF0000; }
 
 svg.text-secondary .color-foreground {
   fill: #627594; }
@@ -14167,7 +14167,7 @@ svg.text-dark .color-background {
     transform: perspective(999px) rotateX(7deg) translate3d(0px, -4px, 5px); }
 
 *.gradient-animation {
-  background: linear-gradient(-45deg, #2152ff, #ea0606, #fbcf33, #7928CA, #344767);
+  background: linear-gradient(-45deg, #2152ff, #ea0606, #fbcf33, #000000, #344767);
   background-size: 400% 400% !important;
   animation: gradient 10s ease infinite; }
 
@@ -15205,8 +15205,8 @@ hr.horizontal {
     .nav.nav-pills.nav-pills-primary .nav-link.active {
       color: #fff; }
     .nav.nav-pills.nav-pills-primary .moving-tab .nav-link.active {
-      background: #7928CA;
-      color: #7928CA; }
+      background: #000000;
+      color: #000000; }
   .nav.nav-pills.nav-pills-info {
     background: #fff;
     color: #fff; }
@@ -15294,7 +15294,7 @@ hr.horizontal {
   line-height: 30px; }
 
 .pagination.pagination-primary .page-item.active > .page-link, .pagination.pagination-primary .page-item.active > .page-link:focus, .pagination.pagination-primary .page-item.active > .page-link:hover {
-  background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%);
+  background-image: linear-gradient(310deg, #000000 0%, #FF0080 100%);
   border: none; }
 
 .pagination.pagination-secondary .page-item.active > .page-link, .pagination.pagination-secondary .page-item.active > .page-link:focus, .pagination.pagination-secondary .page-item.active > .page-link:hover {
@@ -15981,7 +15981,7 @@ p {
   position: relative;
   z-index: 1; }
   .text-gradient.text-primary {
-    background-image: linear-gradient(310deg, #7928CA, #FF0080); }
+    background-image: linear-gradient(310deg, #000000, #FF0080); }
   .text-gradient.text-info {
     background-image: linear-gradient(310deg, #2152FF, #21D4FD); }
   .text-gradient.text-success {
@@ -16931,7 +16931,7 @@ span.flatpickr-weekday {
   border-radius: 3px; }
 
 .noUi-connect {
-  background-image: linear-gradient(310deg, #7928CA 0%, #FF0080 100%); }
+  background-image: linear-gradient(310deg, #000000 0%, #FF0080 100%); }
 
 /* Handles and cursors;
  */
