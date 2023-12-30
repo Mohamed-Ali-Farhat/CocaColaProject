@@ -153,9 +153,67 @@
     }
   }
 
+  @keyframes rain {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(10vh);
+        opacity: 1;
+      }
+    }
+
+    .falling-heart {
+      position: fixed;
+      animation: rain linear infinite;
+      animation-duration: 2s;
+      transform-origin: center bottom;
+      font-size: 24px;
+      color: red;
+    }
 
 
-      /* Your other styles here */
+
+
+
+
+
+
+
+
+
+
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(10vh);
+        opacity: 1;
+      }
+    }
+    .falling-emoji {
+      position: fixed;
+      animation: fall linear infinite;
+      animation-duration: 2s;
+      transform-origin: center bottom;
+      font-size: 24px;
+      color: red;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+
+
+
+
+
+
     </style>
   </head>
   
@@ -184,10 +242,52 @@
       <p>Your Previous Text Was :
         {% if prediction == '0' %}
         <span class="negative">Negative</span>
+        <script>
+          // Generate and append falling emojis dynamically
+          for (let i = 0; i < 10; i++) {
+            const emoji = document.createElement('div');
+            emoji.className = 'falling-emoji';
+            emoji.innerHTML = '👎';
+            document.body.appendChild(emoji);
+            positionEmoji(emoji);
+          }
+    
+          // Position emojis randomly on the page
+          function positionEmoji(emoji) {
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            emoji.style.left = `${randomX}px`;
+            emoji.style.top = `${randomY}px`;
+          }
+        </script>
+
+
+
+
         {% elif prediction == '1' %}
         <span class="neutral">Neutral</span>
         {% elif prediction == '2' %}
         <span class="positive">Positive</span>
+
+        <script>
+          // Generate and append falling hearts dynamically
+          for (let i = 0; i < 10; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            heart.innerHTML = '👍';
+            document.body.appendChild(heart);
+            positionHeart(heart);
+          }
+
+          // Position hearts randomly on the page
+          function positionHeart(heart) {
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            heart.style.left = `${randomX}px`;
+            heart.style.top = `${randomY}px`;
+          }
+        </script>
+
         {% endif %}
       </p>
       {% endif %}
@@ -196,6 +296,25 @@
     
   
     <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       function showPrediction() {
         var inputValue = document.getElementById('commentInput').value;
         var predictionContainer = document.getElementById('predictionContainer');
@@ -242,13 +361,13 @@
 
 
 
-<h1>This is A Machine Learning Model That works With 
+<h2>This is A Machine Learning Model That Works With 
   <span
      class="txt-rotate"
      data-period="2000"
-     data-rotate='[ "Precision.", "Extra Trees .", "fun!" ]'></span>
+     data-rotate='[ "Precision.", "Extra Trees Algorithm.", "certainty!" ]'></span>
      
-</h1>
+</h2>
 
 
 
@@ -285,7 +404,7 @@
   </html>
   
   <br>
-  <br>
+  
 
 
 
