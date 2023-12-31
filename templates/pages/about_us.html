@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>@charset "utf-8";
         /* CSS Document */
@@ -20,7 +21,7 @@
             height: 100%;
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #181515;
+            background-color: #fff;
         }
         h3 {color: #e03333;}
         div.logo {
@@ -345,7 +346,7 @@
         }
         .team-card{
             border-radius: 50px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); */
             margin: 0px 20px;
             text-align: center;
             transition: transform 0.6s ease;
@@ -362,67 +363,203 @@
             width: 130px;
             object-fit: cover;
             margin-bottom: 10px;
+            vertical-align: middle;
         }
         .team-details h3{
             color: #FFF;
             font-size: 30px;
             margin: 15px 0px;
+            display: flex;
         }
         .team-details p{
             color: #426385;
             font-size: 18px;
             margin: 15px 0px;
+            display: flex;
         }
+        @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.frontside .card .card-body p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
         </style>
 </head>
 <body>
-	<div class="hero-image-about">
+	<!-- <div class="hero-image-about">
 		<div class="logo">
 			<a href="{% url 'index' %}"><img src="../../static/img/CocaLogo.png" alt="Premier Event Technology Logo"/></a>
 		</div>
 		<label for="toggle-1" class="toggle-menu"><ul><li></li> <li></li> <li></li></ul></label>
 		<input type="checkbox" id="toggle-1">
 		<nav>
-			<ul>
+			<ul> -->
 				<!-- Edit Menu Links -->
-				<li><a href="#service">About</a></li>
+				<!-- <li><a href="#service">About</a></li>
 				<li><a href="{% url 'index' %}">Home</a></li>
 				<li><a href="#vision">Our Vision</a></li>
 				<li><a href="#team">Our Team</a></li>
-				<li><a href="#">Contact Us</a></li>
+				<li><a href="#">Contact Us</a></li> -->
 				<!-- END Menu Links -->
-			</ul>
-		</nav>
+			<!-- </ul>
+		</nav> -->
 		
 		<!-- Edit Banner Text -->
-		<div class="hero-text">
+		<!-- <div class="hero-text">
 			<h1>About Us</h1>
 			<p class="hero-subtitle">Analyize your target.</p>
-		</div>
+		</div> -->
 		<!-- END Banner Text -->
-	</div>
+	<!-- </div>
 	<main>
 		<article class="main" id="service">
-			<section class="content">
+			<section class="content"> -->
 				<!-- Edit Homepage Text -->
-				<p class="blue-text">Our <strong>Services</strong></p>
-				<p id="text">Embark on a transformative investment journey with our suite of services designed to redefine the way you approach the stock market.</p>
+				<!-- <p class="blue-text">Our <strong>Services</strong></p>
+				<p id="text">Embark on a transformative investment journey with our suite of services designed to redefine the way you approach the stock market.</p> -->
 				<!-- END Homepage Text -->
-			</section>
+			<!-- </section>
 			<div id="services">
-				<section class="grid-services">
+				<section class="grid-services"> -->
 				  	<!-- Edit Services Section -->
-					<div class="grid-group-services">
+					<!-- <div class="grid-group-services">
 						<div class="grid-group-services-box">
 							<div class="services-icon">
 								<i class="fas glyphicon glyphicon-piggy-bank"></i>
 							</div>
-							<div class="services-description">
+							<div class="services-description"> -->
 							<!-- Edit Video Section -->
-								<h3>Stock Price Analysis</h3>
-								<p>Unlock the true potential of your investments with our comprehensive Stock Price Analysis service. Leveraging state-of-the-art machine learning models and sophisticated data analytics, we delve deep into the intricate patterns and trends of Coca-Cola stock prices. Our meticulous approach not only provides you with real-time insights but also equips you with the foresight needed to navigate the dynamic landscape of the stock market. Whether you are a seasoned investor or a newcomer to the financial arena, our Stock Price Analysis service empowers you with the knowledge to make informed decisions and stay ahead of market movements.</p>
+								<!-- <h3>Stock Price Analysis</h3>
+								<p>Unlock the true potential of your investments with our comprehensive Stock Price Analysis service. Leveraging state-of-the-art machine learning models and sophisticated data analytics, we delve deep into the intricate patterns and trends of Coca-Cola stock prices. Our meticulous approach not only provides you with real-time insights but also equips you with the foresight needed to navigate the dynamic landscape of the stock market. Whether you are a seasoned investor or a newcomer to the financial arena, our Stock Price Analysis service empowers you with the knowledge to make informed decisions and stay ahead of market movements.</p> -->
 							<!-- END Video Section -->
-							</div>
+							<!-- </div>
 						</div>
 					</div>
 					<div class="grid-group-services">
@@ -430,12 +567,12 @@
 							<div class="services-icon">
 								<i class="fas glyphicon glyphicon-eye-open"></i>
 							</div>
-							<div class="services-description">
+							<div class="services-description"> -->
 								<!-- Edit Audio Section -->
-								<h3>Sentiment Tracking:</h3>
-								<p>Stay ahead of market sentiment fluctuations with our dedicated Sentiment Tracking service. We understand the power of public perception in influencing stock prices, and our advanced sentiment analysis tools keep you in the loop. By monitoring social media, news, and other relevant sources, we provide you with a comprehensive understanding of how public sentiment is shaping the market dynamics for Coca-Cola stock. Armed with this information, you can strategically position your investments, capitalize on positive sentiments, and navigate potential risks with confidence.</p>
+								<!-- <h3>Sentiment Tracking:</h3>
+								<p>Stay ahead of market sentiment fluctuations with our dedicated Sentiment Tracking service. We understand the power of public perception in influencing stock prices, and our advanced sentiment analysis tools keep you in the loop. By monitoring social media, news, and other relevant sources, we provide you with a comprehensive understanding of how public sentiment is shaping the market dynamics for Coca-Cola stock. Armed with this information, you can strategically position your investments, capitalize on positive sentiments, and navigate potential risks with confidence.</p> -->
 								<!-- END Audio Section -->
-							</div>
+							<!-- </div>
 						</div>
 					</div>
 					<div class="grid-group-services">
@@ -443,89 +580,323 @@
 							<div class="services-icon">
 								<i class="fas glyphicon glyphicon-king"></i>
 							</div>
-							<div class="services-description">
+							<div class="services-description"> -->
 								<!-- Edit Lighting Section -->
-								<h3>Investor-Focused Insights:</h3>
-								<p>Tailor your investment strategy to your unique needs with our Investor-Focused Insights service. We recognize that each investor has distinct goals and risk tolerance levels, and our service is designed to cater to those individual preferences. Through personalized data-driven insights, we guide you in making informed decisions aligned with your investment objectives. Whether you're seeking long-term stability, short-term gains, or a balanced portfolio, our Investor-Focused Insights service ensures that your investment strategy is finely tuned to match your financial aspirations.</p>
+								<!-- <h3>Investor-Focused Insights:</h3>
+								<p>Tailor your investment strategy to your unique needs with our Investor-Focused Insights service. We recognize that each investor has distinct goals and risk tolerance levels, and our service is designed to cater to those individual preferences. Through personalized data-driven insights, we guide you in making informed decisions aligned with your investment objectives. Whether you're seeking long-term stability, short-term gains, or a balanced portfolio, our Investor-Focused Insights service ensures that your investment strategy is finely tuned to match your financial aspirations.</p> -->
 								<!-- END Lighting Section -->
-							</div>
+							<!-- </div>
 						</div>
 					</div>
-				</section>
+				</section> -->
 				<!-- END Services Section -->
-			</div>
-		</article>
+			<!-- </div>
+		</article> 
         <article class="main" id="vision">
-			<section class="content">
+			<section class="content"> -->
 				<!-- Edit Homepage Text -->
-				<p class="blue-text">our <strong>Vision</strong></p>
-				<p id="text">At our core, we are a dynamic team with a shared passion for decoding the complexities of the financial world, particularly in the context of Coca-Cola stock. With a relentless commitment to data-driven insights, we specialize in leveraging advanced analytics, Power BI, and machine learning models to provide investors with unparalleled stock price analyses. Our journey began with a vision to empower investors through cutting-edge technology, and we have since evolved into a trusted source for comprehensive and actionable market intelligence.</p>
+				<!-- <p class="blue-text">our <strong>Vision</strong></p>
+				<p id="text">At our core, we are a dynamic team with a shared passion for decoding the complexities of the financial world, particularly in the context of Coca-Cola stock. With a relentless commitment to data-driven insights, we specialize in leveraging advanced analytics, Power BI, and machine learning models to provide investors with unparalleled stock price analyses. Our journey began with a vision to empower investors through cutting-edge technology, and we have since evolved into a trusted source for comprehensive and actionable market intelligence.</p> -->
 				<!-- END Homepage Text -->
-			</section>
+			<!-- </section> -->
 		</article>
         <article class="main" id="team">
-			<section class="content team-section">
-				<!-- Edit Homepage Text -->
-				<p class="blue-text">our <strong>Team</strong></p>
-				<p id="text">Our team is a harmonious blend of expertise and innovation, united by a shared vision of revolutionizing the investor experience. Comprising seasoned professionals in finance, data science, and technology, we bring a diverse range of skills to the table. Together, we form a collaborative force dedicated to pushing the boundaries of what's possible in the world of stock market analysis. With a deep understanding of both the nuances of financial data and the power of cutting-edge technology, our team stands as a testament to our commitment to excellence and the pursuit of a smarter, more accessible investment landscape.</p>
-				<div class="team-cards">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
+			<section id="team" class="pb-5">
+                <div class="container">
+                    <h5 class="section-title h1">OUR TEAM</h5>
+                    <div class="row">
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" >
+                                <div class="mainflip flip-0">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/dali.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Med Ali Farhat</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/mehdi.jpeg" alt="card image"></p>
+                                                <h4 class="card-title">Mehdi Fgaier</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/hedi.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Med El Hedi Bettaieb</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/PHOTO.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Nadia Trabelsi</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/sarra.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Sarra Ben Ouhiba</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
+                        <!-- ./Team member -->
+                        <!-- Team member -->
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                                <div class="mainflip">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <p><img class=" img-fluid" src="../../static/img/sarra.jpg" alt="card image"></p>
+                                                <h4 class="card-title">Fourat Mansouri</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.</p>
+                                                <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center mt-4">
+                                                <h4 class="card-title">Sunlimetech</h4>
+                                                <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-facebook"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-twitter"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-skype"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item">
+                                                        <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                                            <i class="fa fa-google"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
-                        </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
-                        </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
-                        </div>
-                    </div>
-                    <div class="team-card">
-                        <div class="team-image">
-                            <img src="../../static/img/PHOTO.jpg">
-                        </div>
-                        <div class="team-detail">
-                            <h3>Mehdi Fgaier</h3>
-                            <p>designer</p>
-                        </div>
+                        <!-- ./Team member -->
+            
                     </div>
                 </div>
-                <!-- END Homepage Text -->
-			</section>
+            </section>
 		</article>
 	</main>
 	<footer class="footerRow">
@@ -554,6 +925,10 @@
 			x.className = "menu";
 		  }
 	} 
+
 </script>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>

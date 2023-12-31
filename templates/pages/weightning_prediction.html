@@ -3,24 +3,6 @@
 
 {% block content %}
 
-<style>
-.styled-button {
-  background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
-  color: #FFFFFF;
-  padding: 15px 30px;
-  font-size: 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-.styled-button:hover {
-  background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
-}</style>
-
 <!----------------------------------------------------------------------------------------------------------------------------------------------------------->
 <div class="container">
   <div class="card">
@@ -46,13 +28,28 @@
     {% if results.result %} 
     <script>
     var txt = '{{ results.result }}';
+    var txt1 ='';
    </script>
      {% else %}
-       <script>
-         var txt = 'Predicted weighting:\n{{ results }}';
-     </script>
+        {% if results < 7 %} 
+        <script>
+          var txt = 'Predicted weighting: {{ results }}';
+          var txt1 = 'The predicted low weight for a specific shareholder suggests a smaller impact on overall ownership.While this shareholder holds a position, their influence may be limited, and the focus remains on engaging with major stakeholders to ensure alignment with strategic objectives';
+        </script>
+        {% elif results >= 7 and results <= 16 %}
+        <script>
+          var txt = 'Predicted weighting: {{ results }}';
+          var txt1 = 'Our analysis indicates a moderate weight for this Shareholder, signifying a noteworthy but balanced influence.We value the support and engagement of shareholders in this range and will continue to foster open communication to address any concerns and share updates on company developments';
+        </script>
+        {% else %} 
+        <script>
+          var txt = 'Predicted weighting: {{ results }}';
+          var txt1 = 'This Shareholder reflects a significant presence in our ownership structure.Recognizing the impact of such stakeholders, we are committed to maintain a strong and transparent dialogue to ensure alignment with our corporate vision and to address any questions or considerations they may have';
+        </script>
+         {% endif %}
      {% endif %} 
      <p id="demo" style="font-size: 40px; margin-top: 10px;"></p>
+     <p id="demo1" style="font-size: 10px; margin-top: 10px;"></p>
   </div>
 </div>
   
@@ -60,18 +57,26 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var i = 0;
-    var speed = 50;
+  var j = 0;
+  var speed = 50;
+  var speed1 =5;
 
-    function typeWriter() {
-      var demoElement = document.getElementById("demo");
-      if (i < txt.length) {
-        demoElement.innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
+  function typeWriter() {
+    var demoElement = document.getElementById("demo");
+    var demo1Element = document.getElementById("demo1");
+
+    if (i < txt.length) {
+      demoElement.innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    } else if (j < txt1.length) {
+      demo1Element.innerHTML += txt1.charAt(j);
+      j++;
+      setTimeout(typeWriter, speed1);
     }
+  }
 
-    typeWriter();
+  typeWriter();
   });
 </script>
 
@@ -79,6 +84,24 @@
 
 
 
+
+<style>
+  .styled-button {
+    background: linear-gradient(310deg, #000000 0%, #FF0000 100%);
+    color: #FFFFFF;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .styled-button:hover {
+    background: linear-gradient(310deg, #FF0000 0%, #000000 100%);
+  }</style>
 
 
 
@@ -95,6 +118,7 @@
 
   .container {
       display: flex;
+      width: 100%;
   }
 
   .card {
@@ -114,7 +138,7 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 100%;
       height: 200px;
-      
+
   }
 </style>
 
